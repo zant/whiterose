@@ -11,6 +11,8 @@
 		7F2DCDDB241D7A9000AB0D42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCDDA241D7A9000AB0D42 /* ViewController.swift */; };
 		7F2DCDDD241D7A9200AB0D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2DCDDC241D7A9200AB0D42 /* Assets.xcassets */; };
 		7F2DCDE0241D7A9200AB0D42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2DCDDE241D7A9200AB0D42 /* Main.storyboard */; };
+		7F2DCDE9241D865A00AB0D42 /* MenuTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCDE8241D865A00AB0D42 /* MenuTimer.swift */; };
+		7F2DCDEB241D8DB700AB0D42 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCDEA241D8DB700AB0D42 /* StatusMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		7F2DCDDF241D7A9200AB0D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F2DCDE1241D7A9200AB0D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F2DCDE2241D7A9200AB0D42 /* MenuBarTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuBarTimer.entitlements; sourceTree = "<group>"; };
+		7F2DCDE8241D865A00AB0D42 /* MenuTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTimer.swift; sourceTree = "<group>"; };
+		7F2DCDEA241D8DB700AB0D42 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +58,13 @@
 			isa = PBXGroup;
 			children = (
 				7F2DCDD8241D7A9000AB0D42 /* AppDelegate.swift */,
+				7F2DCDEA241D8DB700AB0D42 /* StatusMenu.swift */,
 				7F2DCDDA241D7A9000AB0D42 /* ViewController.swift */,
 				7F2DCDDC241D7A9200AB0D42 /* Assets.xcassets */,
 				7F2DCDDE241D7A9200AB0D42 /* Main.storyboard */,
 				7F2DCDE1241D7A9200AB0D42 /* Info.plist */,
 				7F2DCDE2241D7A9200AB0D42 /* MenuBarTimer.entitlements */,
+				7F2DCDE8241D865A00AB0D42 /* MenuTimer.swift */,
 			);
 			path = MenuBarTimer;
 			sourceTree = "<group>";
@@ -133,6 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F2DCDEB241D8DB700AB0D42 /* StatusMenu.swift in Sources */,
+				7F2DCDE9241D865A00AB0D42 /* MenuTimer.swift in Sources */,
 				7F2DCDDB241D7A9000AB0D42 /* ViewController.swift in Sources */,
 				7F2DCDD9241D7A9000AB0D42 /* AppDelegate.swift in Sources */,
 			);

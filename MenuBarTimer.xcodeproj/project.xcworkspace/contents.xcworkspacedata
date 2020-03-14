@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MenuBarTimer.xcodeproj">
+      location = "self:../../../../projects">
    </FileRef>
 </Workspace>

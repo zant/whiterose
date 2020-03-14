@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,37 +674,53 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MenuBarTimer" customModuleProvider="target">
+                    <connections>
+                        <outlet property="currentTime" destination="xQZ-FQ-Yaj" id="x6U-Hf-tMG"/>
+                        <outlet property="menu" destination="pOX-sV-fJU" id="QrM-I1-K0e"/>
+                        <outlet property="preferences" destination="g4E-mp-3Oj" id="jbT-Wf-3FM"/>
+                        <outlet property="quit" destination="A6q-54-rbX" id="TQB-EJ-cPP"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
-        </scene>
-        <!--Window Controller-->
-        <scene sceneID="R2V-B0-nI4">
-            <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <connections>
-                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
-                        </connections>
-                    </window>
+                <menu id="pOX-sV-fJU" customClass="StatusMenu" customModule="MenuBarTimer" customModuleProvider="target">
+                    <items>
+                        <menuItem title="00:00" enabled="NO" id="wAO-xr-rRD">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="mLN-Tz-JwF"/>
+                        <menuItem title="Start" keyEquivalent="s" id="xQZ-FQ-Yaj">
+                            <connections>
+                                <action selector="onStartTimer:" target="pOX-sV-fJU" id="B5c-Jg-Yft"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="k67-UL-b6i"/>
+                        <menuItem title="Preferences" keyEquivalent="," id="g4E-mp-3Oj">
+                            <connections>
+                                <action selector="onSettings:" target="Voe-Tx-rLC" id="zHB-YR-jKM"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Quit" keyEquivalent="q" id="A6q-54-rbX">
+                            <connections>
+                                <action selector="onQuit:" target="pOX-sV-fJU" id="x0Y-8s-ERo"/>
+                            </connections>
+                        </menuItem>
+                    </items>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <outlet property="preferencesItem" destination="g4E-mp-3Oj" id="7BK-C3-5rQ"/>
+                        <outlet property="quitItem" destination="A6q-54-rbX" id="o7v-Zu-ypH"/>
+                        <outlet property="startItem" destination="xQZ-FQ-Yaj" id="gCs-iK-H6l"/>
+                        <outlet property="timerItem" destination="wAO-xr-rRD" id="PPq-lv-ICG"/>
                     </connections>
-                </windowController>
-                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                </menu>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="-79"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="MenuBarTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -711,7 +728,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="80" y="159"/>
         </scene>
     </scenes>
 </document>
