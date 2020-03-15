@@ -694,12 +694,12 @@
                                 <action selector="onStartItem:" target="pOX-sV-fJU" id="3Xw-62-N5f"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Pause" keyEquivalent="p" id="OaZ-gU-sBc">
+                        <menuItem title="Pause" hidden="YES" keyEquivalent="p" id="OaZ-gU-sBc">
                             <connections>
                                 <action selector="onPauseItem:" target="pOX-sV-fJU" id="zFM-zv-Zlf"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Stop" keyEquivalent="x" id="J5U-Cp-mX0">
+                        <menuItem title="Stop" hidden="YES" keyEquivalent="x" id="J5U-Cp-mX0">
                             <connections>
                                 <action selector="onStopItem:" target="pOX-sV-fJU" id="bQg-hW-z9T"/>
                             </connections>

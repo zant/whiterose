@@ -61,7 +61,7 @@ class StatusMenu: NSMenu {
             pauseItem.title = "Resume"
             pauseItem.isHidden = false
             stopItem.isHidden = false
-        } else {
+        } else if timer.isRunning {
             startItem.isHidden = true
             pauseItem.title = "Pause"
             pauseItem.isHidden = false

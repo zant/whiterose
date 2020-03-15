@@ -28,6 +28,10 @@ class MenuTimer {
         return timer == nil && elapsedTime > 0
     }
     
+    var isRunning: Bool {
+        return timer != nil && elapsedTime >= 0
+    }
+    
     @objc dynamic func timerAction() {
         guard let startTime = startTime else {
             return delegate!.elapsedTimeOnTimer(self, elapsedTime: elapsedTime)
