@@ -1,7 +1,8 @@
 <div align="center">
   <img src="Stuff/Screenshot.png">
-  <h1>Timerella</h1>
 </div>
+
+## Menu Bar Timer
 
 Minimalist timer running in the menu bar
 
