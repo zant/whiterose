@@ -695,10 +695,20 @@
                                 <action selector="onStartTimer:" target="pOX-sV-fJU" id="B5c-Jg-Yft"/>
                             </connections>
                         </menuItem>
+                        <menuItem title="Stop" hidden="YES" keyEquivalent="x" id="4O3-ga-4SH">
+                            <connections>
+                                <action selector="onStopTimer:" target="pOX-sV-fJU" id="cXu-8P-sHW"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Reset" hidden="YES" keyEquivalent="r" id="83h-pL-Pyd">
+                            <connections>
+                                <action selector="onResetTimer:" target="pOX-sV-fJU" id="FTD-kj-KZQ"/>
+                            </connections>
+                        </menuItem>
                         <menuItem isSeparatorItem="YES" id="k67-UL-b6i"/>
                         <menuItem title="Preferences" keyEquivalent="," id="g4E-mp-3Oj">
                             <connections>
-                                <action selector="onSettings:" target="Voe-Tx-rLC" id="zHB-YR-jKM"/>
+                                <action selector="onPreferences:" target="pOX-sV-fJU" id="Per-AA-VSl"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Quit" keyEquivalent="q" id="A6q-54-rbX">
@@ -710,7 +720,10 @@
                     <connections>
                         <outlet property="preferencesItem" destination="g4E-mp-3Oj" id="7BK-C3-5rQ"/>
                         <outlet property="quitItem" destination="A6q-54-rbX" id="o7v-Zu-ypH"/>
-                        <outlet property="startItem" destination="xQZ-FQ-Yaj" id="gCs-iK-H6l"/>
+                        <outlet property="resetItem" destination="83h-pL-Pyd" id="Cig-eI-a7j"/>
+                        <outlet property="resetTimer" destination="83h-pL-Pyd" id="kku-zV-lQ4"/>
+                        <outlet property="startItem" destination="xQZ-FQ-Yaj" id="Mq1-eL-Q3N"/>
+                        <outlet property="stopItem" destination="4O3-ga-4SH" id="Kte-Gi-FCG"/>
                         <outlet property="timerItem" destination="wAO-xr-rRD" id="PPq-lv-ICG"/>
                     </connections>
                 </menu>

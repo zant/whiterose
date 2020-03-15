@@ -60,11 +60,11 @@
 				7F2DCDD8241D7A9000AB0D42 /* AppDelegate.swift */,
 				7F2DCDEA241D8DB700AB0D42 /* StatusMenu.swift */,
 				7F2DCDDA241D7A9000AB0D42 /* ViewController.swift */,
+				7F2DCDE8241D865A00AB0D42 /* MenuTimer.swift */,
 				7F2DCDDC241D7A9200AB0D42 /* Assets.xcassets */,
 				7F2DCDDE241D7A9200AB0D42 /* Main.storyboard */,
 				7F2DCDE1241D7A9200AB0D42 /* Info.plist */,
 				7F2DCDE2241D7A9200AB0D42 /* MenuBarTimer.entitlements */,
-				7F2DCDE8241D865A00AB0D42 /* MenuTimer.swift */,
 			);
 			path = MenuBarTimer;
 			sourceTree = "<group>";

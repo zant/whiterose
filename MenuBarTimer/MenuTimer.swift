@@ -19,10 +19,18 @@ class MenuTimer {
     var delegate: MenuTimerProtocol?
 
     init() {}
+   
+    var isStopped: Bool {
+       return timer == nil && elapsedTime == 0
+    }
+    
+    var isPaused: Bool {
+        return timer == nil && elapsedTime > 0
+    }
     
     @objc dynamic func timerAction() {
         guard let startTime = startTime else {
-            return
+            return delegate!.elapsedTimeOnTimer(self, elapsedTime: elapsedTime)
         }
         
         elapsedTime = -startTime.timeIntervalSinceNow
@@ -39,6 +47,34 @@ class MenuTimer {
                                      selector: #selector(timerAction),
                                      userInfo: nil,
                                      repeats: true)
+
+        timerAction()
+    }
+    
+    func resumeTimer() {
+        startTime = Date(timeIntervalSinceNow: -elapsedTime)
+
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                     target: self,
+                                     selector: #selector(timerAction),
+                                     userInfo: nil,
+                                     repeats: true)
+        timerAction()
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+        
+        timerAction()
+    }
+    
+    func resetTimer() {
+        timer?.invalidate()
+        timer = nil
+        
+        startTime = nil
+        elapsedTime = 0
 
         timerAction()
     }

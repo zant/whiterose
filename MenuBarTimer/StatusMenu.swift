@@ -20,6 +20,8 @@ class StatusMenu: NSMenu {
         }
         
         timer.startTimer()
+            RunLoop.current.add(timer.timer!, forMode: RunLoop.Mode.common)
+            RunLoop.current.add(timer.timer!, forMode: RunLoop.Mode.common)
     }
     
     private func textToDisplay(for elapsedTime: TimeInterval) -> String {
