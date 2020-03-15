@@ -1,12 +1,16 @@
 <div align="center">
   <img src="Stuff/Screenshot.png">
+  <h1>Menu Bar Timer</h1>
 </div>
 
-## Menu Bar Timer
-
 Minimalist timer running in the menu bar
+
+### Features
+- Start, pause and stop timer
 
 ### Coming features
 - Avoid closing the menu when clicking items
 - Preferences view
-- Save logged items to excel
+- Save logged times to excel
+- Notifications
+- Timer
