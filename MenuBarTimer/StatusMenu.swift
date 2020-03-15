@@ -10,18 +10,32 @@ import Cocoa
 
 class StatusMenu: NSMenu {
     @IBOutlet weak var timerItem: NSMenuItem!
+    @IBOutlet weak var startItem: NSMenuItem!
+    @IBOutlet weak var pauseItem: NSMenuItem!
+    @IBOutlet weak var stopItem: NSMenuItem!
     
-
     let timer = MenuTimer()
-
-    @IBAction func onStartTimer(_ sender: Any) {
-        if timer.delegate == nil {
+    
+    @IBAction func onStartItem(_ sender: Any) {
+        if (timer.delegate == nil) {
             timer.delegate = self
         }
         
         timer.startTimer()
             RunLoop.current.add(timer.timer!, forMode: RunLoop.Mode.common)
+    }
+    
+    @IBAction func onPauseItem(_ sender: Any) {
+        if !timer.isPaused {
+            timer.pauseTimer()
+        } else {
+            timer.resumeTimer()
             RunLoop.current.add(timer.timer!, forMode: RunLoop.Mode.common)
+        }
+    }
+    
+    @IBAction func onStopItem(_ sender: Any) {
+        timer.stopTimer()
     }
     
     private func textToDisplay(for elapsedTime: TimeInterval) -> String {
@@ -33,17 +47,33 @@ class StatusMenu: NSMenu {
         
         return "\(minutesDisplay):\(secondsDisplay)"
     }
-    
-
-    @IBAction func onQuit(_ sender: Any) {
+    @IBAction func onQuitTimer(_ sender: Any) {
         NSApp.terminate(sender)
+    }
+    
+    func updateButtons() {
+        if timer.isStopped {
+            startItem.isHidden = false
+            pauseItem.isHidden = true
+            stopItem.isHidden = true
+        } else if timer.isPaused {
+            startItem.isHidden = true
+            pauseItem.title = "Resume"
+            pauseItem.isHidden = false
+            stopItem.isHidden = false
+        } else {
+            startItem.isHidden = true
+            pauseItem.title = "Pause"
+            pauseItem.isHidden = false
+            stopItem.isHidden = false
+        }
     }
 }
 
 extension StatusMenu: MenuTimerProtocol {
     func elapsedTimeOnTimer(_ timer: MenuTimer, elapsedTime: TimeInterval) {
         updateDisplay(for: elapsedTime)
-        print(elapsedTime)
+        updateButtons()
     }
 }
 

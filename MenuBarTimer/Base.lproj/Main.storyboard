@@ -676,7 +676,6 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MenuBarTimer" customModuleProvider="target">
                     <connections>
-                        <outlet property="currentTime" destination="xQZ-FQ-Yaj" id="x6U-Hf-tMG"/>
                         <outlet property="menu" destination="pOX-sV-fJU" id="QrM-I1-K0e"/>
                         <outlet property="preferences" destination="g4E-mp-3Oj" id="jbT-Wf-3FM"/>
                         <outlet property="quit" destination="A6q-54-rbX" id="TQB-EJ-cPP"/>
@@ -690,19 +689,19 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="mLN-Tz-JwF"/>
-                        <menuItem title="Start" keyEquivalent="s" id="xQZ-FQ-Yaj">
+                        <menuItem title="Start" keyEquivalent="s" id="9GA-8c-wN2">
                             <connections>
-                                <action selector="onStartTimer:" target="pOX-sV-fJU" id="B5c-Jg-Yft"/>
+                                <action selector="onStartItem:" target="pOX-sV-fJU" id="3Xw-62-N5f"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Stop" hidden="YES" keyEquivalent="x" id="4O3-ga-4SH">
+                        <menuItem title="Pause" keyEquivalent="p" id="OaZ-gU-sBc">
                             <connections>
-                                <action selector="onStopTimer:" target="pOX-sV-fJU" id="cXu-8P-sHW"/>
+                                <action selector="onPauseItem:" target="pOX-sV-fJU" id="zFM-zv-Zlf"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Reset" hidden="YES" keyEquivalent="r" id="83h-pL-Pyd">
+                        <menuItem title="Stop" keyEquivalent="x" id="J5U-Cp-mX0">
                             <connections>
-                                <action selector="onResetTimer:" target="pOX-sV-fJU" id="FTD-kj-KZQ"/>
+                                <action selector="onStopItem:" target="pOX-sV-fJU" id="bQg-hW-z9T"/>
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="k67-UL-b6i"/>
@@ -713,17 +712,16 @@
                         </menuItem>
                         <menuItem title="Quit" keyEquivalent="q" id="A6q-54-rbX">
                             <connections>
-                                <action selector="onQuit:" target="pOX-sV-fJU" id="x0Y-8s-ERo"/>
+                                <action selector="onQuitTimer:" target="pOX-sV-fJU" id="g9g-G6-3at"/>
                             </connections>
                         </menuItem>
                     </items>
                     <connections>
+                        <outlet property="pauseItem" destination="OaZ-gU-sBc" id="A3m-rN-dIE"/>
                         <outlet property="preferencesItem" destination="g4E-mp-3Oj" id="7BK-C3-5rQ"/>
                         <outlet property="quitItem" destination="A6q-54-rbX" id="o7v-Zu-ypH"/>
-                        <outlet property="resetItem" destination="83h-pL-Pyd" id="Cig-eI-a7j"/>
-                        <outlet property="resetTimer" destination="83h-pL-Pyd" id="kku-zV-lQ4"/>
-                        <outlet property="startItem" destination="xQZ-FQ-Yaj" id="Mq1-eL-Q3N"/>
-                        <outlet property="stopItem" destination="4O3-ga-4SH" id="Kte-Gi-FCG"/>
+                        <outlet property="startItem" destination="9GA-8c-wN2" id="Zsl-IE-PV0"/>
+                        <outlet property="stopItem" destination="J5U-Cp-mX0" id="OsT-H0-b1b"/>
                         <outlet property="timerItem" destination="wAO-xr-rRD" id="PPq-lv-ICG"/>
                     </connections>
                 </menu>
