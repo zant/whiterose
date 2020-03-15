@@ -685,7 +685,7 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="pOX-sV-fJU" customClass="StatusMenu" customModule="MenuBarTimer" customModuleProvider="target">
                     <items>
-                        <menuItem title="00:00" enabled="NO" id="wAO-xr-rRD">
+                        <menuItem title="00:00:00" enabled="NO" id="wAO-xr-rRD">
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="mLN-Tz-JwF"/>

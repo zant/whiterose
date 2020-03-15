@@ -39,14 +39,17 @@ class StatusMenu: NSMenu {
     }
     
     private func textToDisplay(for elapsedTime: TimeInterval) -> String {
-        let elapsedMinutes = (elapsedTime / 60).rounded()
-        let elapsedSeconds = (elapsedTime - (elapsedMinutes * 60)).rounded()
+        let elapsedHours = floor(elapsedTime / 3600)
+        let elapsedMinutes = floor((elapsedTime - (elapsedHours * 3600)) / 60)
+        let elapsedSeconds = elapsedTime - (elapsedHours * 3600 + elapsedMinutes * 60)
         
+        let hoursDisplay = String(format: "%02d", Int(elapsedHours))
         let minutesDisplay = String(format: "%02d", Int(elapsedMinutes))
         let secondsDisplay = String(format: "%02d", Int(elapsedSeconds))
         
-        return "\(minutesDisplay):\(secondsDisplay)"
+        return "\(hoursDisplay):\(minutesDisplay):\(secondsDisplay)"
     }
+    
     @IBAction func onQuitTimer(_ sender: Any) {
         NSApp.terminate(sender)
     }
@@ -74,6 +77,7 @@ extension StatusMenu: MenuTimerProtocol {
     func elapsedTimeOnTimer(_ timer: MenuTimer, elapsedTime: TimeInterval) {
         updateDisplay(for: elapsedTime)
         updateButtons()
+        print(elapsedTime)
     }
 }
 
