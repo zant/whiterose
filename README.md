@@ -13,7 +13,6 @@ Minimalist timer running on the menu bar
 - Preferences view
 - Save logged times to excel
 - Notifications
-- Timer
 
 ## License
 Released under [MIT License](https://github.com/grdnrt/menu-bar-timer/blob/master/LICENSE)
