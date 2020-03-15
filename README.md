@@ -3,7 +3,7 @@
   <h1>Menu Bar Timer</h1>
 </div>
 
-Minimalist timer running in the menu bar
+Minimalist timer running on the menu bar
 
 ### Features
 - Start, pause and stop timer
