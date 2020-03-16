@@ -11,7 +11,7 @@ Minimalist timer running on the menu bar
 ### Coming features
 - Avoid closing the menu when clicking items
 - Preferences view
-- Save logged times to excel
+- Save logged times to a csv
 - Notifications
 
 ## License
