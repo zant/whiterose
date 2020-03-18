@@ -8,6 +8,65 @@
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MenuBarTimer" customModuleProvider="target">
+                    <connections>
+                        <outlet property="menu" destination="pOX-sV-fJU" id="QrM-I1-K0e"/>
+                        <outlet property="preferences" destination="g4E-mp-3Oj" id="jbT-Wf-3FM"/>
+                        <outlet property="quit" destination="A6q-54-rbX" id="TQB-EJ-cPP"/>
+                    </connections>
+                </customObject>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="pOX-sV-fJU" customClass="MenuViewController" customModule="MenuBarTimer" customModuleProvider="target">
+                    <items>
+                        <menuItem title="00:00:00" enabled="NO" id="wAO-xr-rRD">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="mLN-Tz-JwF"/>
+                        <menuItem title="Start" keyEquivalent="s" id="9GA-8c-wN2">
+                            <connections>
+                                <action selector="onStartItem:" target="pOX-sV-fJU" id="3Xw-62-N5f"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Pause" hidden="YES" keyEquivalent="p" id="OaZ-gU-sBc">
+                            <connections>
+                                <action selector="onPauseItem:" target="pOX-sV-fJU" id="zFM-zv-Zlf"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Stop" hidden="YES" keyEquivalent="x" id="J5U-Cp-mX0">
+                            <connections>
+                                <action selector="onStopItem:" target="pOX-sV-fJU" id="bQg-hW-z9T"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="k67-UL-b6i"/>
+                        <menuItem title="Write csv" id="j46-3a-rbV">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="onWriteCSV:" target="pOX-sV-fJU" id="i38-SP-h0d"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Preferences" keyEquivalent="," id="g4E-mp-3Oj">
+                            <connections>
+                                <action selector="onPreferences:" target="pOX-sV-fJU" id="Per-AA-VSl"/>
+                                <segue destination="h87-gv-T3h" kind="show" id="Rhu-62-nLG"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Quit" keyEquivalent="q" id="A6q-54-rbX">
+                            <connections>
+                                <action selector="onQuitTimer:" target="pOX-sV-fJU" id="g9g-G6-3at"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                    <connections>
+                        <outlet property="pauseItem" destination="OaZ-gU-sBc" id="A3m-rN-dIE"/>
+                        <outlet property="preferencesItem" destination="g4E-mp-3Oj" id="7BK-C3-5rQ"/>
+                        <outlet property="quitItem" destination="A6q-54-rbX" id="o7v-Zu-ypH"/>
+                        <outlet property="startItem" destination="9GA-8c-wN2" id="Zsl-IE-PV0"/>
+                        <outlet property="stopItem" destination="J5U-Cp-mX0" id="OsT-H0-b1b"/>
+                        <outlet property="timerItem" destination="wAO-xr-rRD" id="PPq-lv-ICG"/>
+                        <outlet property="writeCSV" destination="j46-3a-rbV" id="2Zw-Kq-AK1"/>
+                    </connections>
+                </menu>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
@@ -674,72 +733,116 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MenuBarTimer" customModuleProvider="target">
-                    <connections>
-                        <outlet property="menu" destination="pOX-sV-fJU" id="QrM-I1-K0e"/>
-                        <outlet property="preferences" destination="g4E-mp-3Oj" id="jbT-Wf-3FM"/>
-                        <outlet property="quit" destination="A6q-54-rbX" id="TQB-EJ-cPP"/>
-                    </connections>
-                </customObject>
-                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu id="pOX-sV-fJU" customClass="StatusMenu" customModule="MenuBarTimer" customModuleProvider="target">
-                    <items>
-                        <menuItem title="00:00:00" enabled="NO" id="wAO-xr-rRD">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="mLN-Tz-JwF"/>
-                        <menuItem title="Start" keyEquivalent="s" id="9GA-8c-wN2">
-                            <connections>
-                                <action selector="onStartItem:" target="pOX-sV-fJU" id="3Xw-62-N5f"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Pause" hidden="YES" keyEquivalent="p" id="OaZ-gU-sBc">
-                            <connections>
-                                <action selector="onPauseItem:" target="pOX-sV-fJU" id="zFM-zv-Zlf"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Stop" hidden="YES" keyEquivalent="x" id="J5U-Cp-mX0">
-                            <connections>
-                                <action selector="onStopItem:" target="pOX-sV-fJU" id="bQg-hW-z9T"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="k67-UL-b6i"/>
-                        <menuItem title="Preferences" keyEquivalent="," id="g4E-mp-3Oj">
-                            <connections>
-                                <action selector="onPreferences:" target="pOX-sV-fJU" id="Per-AA-VSl"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Quit" keyEquivalent="q" id="A6q-54-rbX">
-                            <connections>
-                                <action selector="onQuitTimer:" target="pOX-sV-fJU" id="g9g-G6-3at"/>
-                            </connections>
-                        </menuItem>
-                    </items>
-                    <connections>
-                        <outlet property="pauseItem" destination="OaZ-gU-sBc" id="A3m-rN-dIE"/>
-                        <outlet property="preferencesItem" destination="g4E-mp-3Oj" id="7BK-C3-5rQ"/>
-                        <outlet property="quitItem" destination="A6q-54-rbX" id="o7v-Zu-ypH"/>
-                        <outlet property="startItem" destination="9GA-8c-wN2" id="Zsl-IE-PV0"/>
-                        <outlet property="stopItem" destination="J5U-Cp-mX0" id="OsT-H0-b1b"/>
-                        <outlet property="timerItem" destination="wAO-xr-rRD" id="PPq-lv-ICG"/>
-                    </connections>
-                </menu>
             </objects>
             <point key="canvasLocation" x="75" y="-79"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Window Controller-->
+        <scene sceneID="mpO-dO-a0U">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="MenuBarTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <windowController id="h87-gv-T3h" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Whn-by-dK4">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <rect key="contentRect" x="196" y="249" width="400" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+                        <value key="minSize" type="size" width="400" height="270"/>
+                        <value key="maxSize" type="size" width="480" height="270"/>
+                        <connections>
+                            <outlet property="delegate" destination="h87-gv-T3h" id="esv-UI-DDG"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="Cfg-FG-a50" kind="relationship" relationship="window.shadowedContentViewController" id="0Od-H5-WA7"/>
+                    </connections>
+                </windowController>
+                <customObject id="Jl7-z8-266" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="159"/>
+            <point key="canvasLocation" x="75" y="305"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="0Jy-Jt-Cw1">
+            <objects>
+                <viewController id="Cfg-FG-a50" customClass="PreferencesViewController" customModule="MenuBarTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="sBW-Ve-C63">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yy-5L-HBm">
+                                <rect key="frame" x="18" y="140" width="364" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="0be-hM-3LG">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpS-2d-64w">
+                                <rect key="frame" x="14" y="104" width="98" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Choose..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfY-Wk-F7v">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="choosePath:" target="Cfg-FG-a50" id="rbD-a5-HWe"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdL-1Y-oZJ">
+                                <rect key="frame" x="18" y="164" width="60" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Save log:" id="Nf1-3p-Vbu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zYq-Jg-Bph">
+                                <rect key="frame" x="327" y="13" width="59" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t41-Ze-pDj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onOK:" target="Cfg-FG-a50" id="QH3-by-2My"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-UQ-r06">
+                                <rect key="frame" x="14" y="13" width="82" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cbt-bs-UOT">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onCancel:" target="Cfg-FG-a50" id="oUJ-vs-xVA"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ulz-z2-gIt">
+                                <rect key="frame" x="112" y="104" width="122" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Set to default" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pib-tO-3J2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setToDefault:" target="Cfg-FG-a50" id="Pnl-nJ-4oc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="pathLabel" destination="3Yy-5L-HBm" id="pnP-A3-zMi"/>
+                    </connections>
+                </viewController>
+                <customObject id="i5V-Jc-NCU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="299"/>
         </scene>
     </scenes>
 </document>

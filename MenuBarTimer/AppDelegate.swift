@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    let menu = StatusMenu()
+    let menu = MenuViewController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
