@@ -1,9 +1,10 @@
 <div align="center">
   <img src="Stuff/Logo.png" width="200" height="200">
   <h1>MenuBarTimer</h1>
+  <p>Minimalist timer running on the menu bar</p>
 </div>
 
-Minimalist timer running on the menu bar
+Track your time with a simple unintrusive macOS menu bar app. Save your logs and keep track of your schedules.
 
 ### Features
 - Stopwatch
