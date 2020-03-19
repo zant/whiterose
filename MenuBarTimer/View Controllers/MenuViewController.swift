@@ -17,31 +17,6 @@ class MenuViewController: NSMenu {
     
     let timer = MenuTimer()
     let preferences = Preferences()
-
-
-    @IBAction func onWriteCSV(_ sender: Any) {
-        let fileUrl: URL = URL(fileURLWithPath: preferences.currentPath).appendingPathComponent("log.csv")
-        
-        if !FileManager.default.fileExists(atPath: fileUrl.path) {
-            FileManager.default.createFile(atPath: fileUrl.path, contents: nil, attributes: nil)
-        }
-
-        if let stream = OutputStream(toFileAtPath: fileUrl.path, append: true) {
-            do {
-                let csv = try CSVWriter(stream: stream)
-
-                try csv.write(row: ["id", "name"])
-                try csv.write(row: ["1","foo"])
-                csv.stream.close()
-            } catch CSVError.cannotOpenFile{
-               print("Cannot open file")
-            } catch CSVError.cannotWriteStream {
-                print("Cannot write stream")
-            } catch {
-                print("Yo")
-            }
-        }
-    }
     
     @IBAction func onStartItem(_ sender: Any) {
         if (timer.delegate == nil) {
@@ -62,19 +37,29 @@ class MenuViewController: NSMenu {
     }
     
     @IBAction func onStopItem(_ sender: Any) {
+        let alert = NSAlert()
+        alert.alertStyle = NSAlert.Style.critical
+        let fileUrl = URL(fileURLWithPath: preferences.currentPath)
+        
+        do {
+            try Data.writeCSV(startDate: timer.startTime!, endDate: Date(), totalTime: timer.elapsedTime, fileUrl: fileUrl)
+            
+        } catch DataError.notWrite {
+            alert.messageText = "Could not write file"
+            alert.runModal()
+        } catch DataError.notInitialize {
+            alert.messageText = "Could not initialize file"
+            alert.runModal()
+        } catch {
+            alert.messageText = "Unexpected error"
+            alert.runModal()
+        }
+        
         timer.stopTimer()
     }
     
     private func textToDisplay(for elapsedTime: TimeInterval) -> String {
-        let elapsedHours = floor(elapsedTime / 3600)
-        let elapsedMinutes = floor((elapsedTime - (elapsedHours * 3600)) / 60)
-        let elapsedSeconds = elapsedTime - (elapsedHours * 3600 + elapsedMinutes * 60)
-        
-        let hoursDisplay = String(format: "%02d", Int(elapsedHours))
-        let minutesDisplay = String(format: "%02d", Int(elapsedMinutes))
-        let secondsDisplay = String(format: "%02d", Int(elapsedSeconds))
-        
-        return "\(hoursDisplay):\(minutesDisplay):\(secondsDisplay)"
+        return Helper.formatInterval(for: elapsedTime)
     }
     
     @IBAction func onQuitTimer(_ sender: Any) {
@@ -104,7 +89,6 @@ extension MenuViewController: MenuTimerProtocol {
     func elapsedTimeOnTimer(_ timer: MenuTimer, elapsedTime: TimeInterval) {
         updateDisplay(for: elapsedTime)
         updateButtons()
-        print(elapsedTime)
     }
 }
 
@@ -113,3 +97,4 @@ extension MenuViewController {
         timerItem.title = textToDisplay(for: elapsedTime)
     }
 }
+

@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class Helper {
+    static func formatInterval(for elapsedTime: TimeInterval) -> String{
+        
+        let elapsedHours = floor(elapsedTime / 3600)
+        let elapsedMinutes = floor((elapsedTime - (elapsedHours * 3600)) / 60)
+        let elapsedSeconds = elapsedTime - (elapsedHours * 3600 + elapsedMinutes * 60)
+        
+        let hoursDisplay = String(format: "%02d", Int(elapsedHours))
+        let minutesDisplay = String(format: "%02d", Int(elapsedMinutes))
+        let secondsDisplay = String(format: "%02d", Int(elapsedSeconds))
+        
+        return "\(hoursDisplay):\(minutesDisplay):\(secondsDisplay)"
+    }
+}
