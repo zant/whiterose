@@ -1,6 +1,6 @@
 <div align="center">
   <img src="Stuff/Logo.png" width="200" height="200">
-  <h1>Menu Bar Timer</h1>
+  <h1>MenuBarTimer</h1>
 </div>
 
 Minimalist timer running on the menu bar
