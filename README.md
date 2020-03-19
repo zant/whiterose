@@ -20,5 +20,9 @@ Track your time with a simple unintrusive macOS menu bar app. Save your logs and
 - Toggle save file
 - Customizable timer
 
+### Credits
+- Readme format: [Gifski](https://github.com/sindresorhus/Gifski) by [@sindresorhus](https://github.com/sindresorhus/)
+- macOS guides: [Ray Wenderlich](https://www.raywenderlich.com/)
+
 ## License
 Released under [MIT License](https://github.com/grdnrt/menu-bar-timer/blob/master/LICENSE)
