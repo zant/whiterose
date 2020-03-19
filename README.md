@@ -6,8 +6,9 @@
 Minimalist timer running on the menu bar
 
 ### Features
-- Start, pause and stop timer
+- Stopwatch
 - Save logged times to a csv
+- Select file location
 
 ### Screenshots
 <img src="Stuff/Screenshot.png">
@@ -15,8 +16,8 @@ Minimalist timer running on the menu bar
 <img src="Stuff/Screenshot3.png">
 
 ### Coming features
-- Preferences view
-- Notifications
+- Toggle save file
+- Customizable timer
 
 ## License
 Released under [MIT License](https://github.com/grdnrt/menu-bar-timer/blob/master/LICENSE)
