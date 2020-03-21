@@ -6,6 +6,9 @@
 
 Track your time with a simple unintrusive macOS menu bar app. Save your logs and keep track of your schedules.
 
+### Installation
+First public release planned to be in a few days. To try the development version you can build it from source with Xcode >= 9.3 
+
 ### Features
 - Stopwatch
 - Save logged times to a csv
