@@ -22,6 +22,8 @@ First public release planned to be in a few days. To try the development version
 ### Coming features
 - Toggle save file
 - Customizable timer
+- Shortcut to start timer
+- Comment time entries
 
 ### Credits
 - Readme format: [Gifski](https://github.com/sindresorhus/Gifski) by [@sindresorhus](https://github.com/sindresorhus/)
