@@ -50,11 +50,11 @@ class Data {
             throw DataError.notWrite
         }
         
+
         let row = [startDate.description, endDate.description, stringTotal]
         print(row)
         do {
             let csv = try CSVWriter(stream: stream)
-            
             // if it does not have a header row
             if !Data.hasFirstRow(for: firstRow) {
                 try csv.write(row: [HeaderRow.startDate.description, HeaderRow.endDate.description, HeaderRow.totalTime.description])
@@ -62,6 +62,8 @@ class Data {
             
             // write cells
             try csv.write(row: [startDate.description, endDate.description, stringTotal])
+            try csv.write(row:[""])
+
             csv.stream.close()
         } catch {
             throw DataError.notWrite
