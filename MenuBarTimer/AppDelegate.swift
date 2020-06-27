@@ -7,6 +7,11 @@
 //
 
 import Cocoa
+import KeyboardShortcuts
+
+extension KeyboardShortcuts.Name {
+    static let startTimer = Name("startTimer")
+}
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,6 +23,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named: NSImage.Name("MenuIcon"))
         }
         statusItem.menu = menu
+        KeyboardShortcuts.onKeyUp(for: .startTimer) {
+            if (self.menu.timer.isStopped) {
+                self.menu.startTimer()
+            } else {
+                self.menu.pauseTimer()
+            }
+//            self.menu.popUp(positioning: self.menu.startItem, at: NSMakePoint(0, 0), in: nil)
+//            print("toggle!")
+        }
+        
     }
         
     func applicationWillTerminate(_ aNotification: Notification) {

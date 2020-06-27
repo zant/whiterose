@@ -7,10 +7,15 @@
 //
 
 import Cocoa
+import KeyboardShortcuts
 
 class PreferencesViewController: NSViewController {
     @IBOutlet weak var pathLabel: NSTextField!
+    @IBOutlet weak var subviewPlaceholder: NSView!
+    
     var preferences = Preferences()
+
+
 
     @IBAction func choosePath(_ sender: Any) {
         let panel = NSOpenPanel()
@@ -38,6 +43,8 @@ class PreferencesViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let recorder = KeyboardShortcuts.RecorderCocoa(for: .startTimer)
+        self.subviewPlaceholder.addSubview(recorder);
         setupPrefs()
     }
     

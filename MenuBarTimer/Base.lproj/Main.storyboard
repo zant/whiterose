@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,7 +42,7 @@
                         <menuItem title="Preferences" keyEquivalent="," id="g4E-mp-3Oj">
                             <connections>
                                 <action selector="onPreferences:" target="pOX-sV-fJU" id="Per-AA-VSl"/>
-                                <segue destination="h87-gv-T3h" kind="show" id="Rhu-62-nLG"/>
+                                <segue destination="aoB-Ku-BOS" kind="show" id="b1o-9d-RLx"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Quit" keyEquivalent="q" id="A6q-54-rbX">
@@ -730,37 +730,37 @@
             <point key="canvasLocation" x="75" y="-79"/>
         </scene>
         <!--Window Controller-->
-        <scene sceneID="mpO-dO-a0U">
+        <scene sceneID="due-fi-m0k">
             <objects>
-                <windowController id="h87-gv-T3h" sceneMemberID="viewController">
-                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Whn-by-dK4">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-                        <rect key="contentRect" x="196" y="249" width="400" height="270"/>
+                <windowController showSeguePresentationStyle="single" id="aoB-Ku-BOS" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="TOB-ni-lb4">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="249" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
-                        <value key="minSize" type="size" width="400" height="270"/>
-                        <value key="maxSize" type="size" width="480" height="270"/>
                         <connections>
-                            <outlet property="delegate" destination="h87-gv-T3h" id="esv-UI-DDG"/>
+                            <outlet property="delegate" destination="aoB-Ku-BOS" id="Reg-hc-Llj"/>
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="Cfg-FG-a50" kind="relationship" relationship="window.shadowedContentViewController" id="0Od-H5-WA7"/>
+                        <segue destination="Cfg-FG-a50" kind="relationship" relationship="window.shadowedContentViewController" id="q5C-X2-3RC"/>
                     </connections>
                 </windowController>
-                <customObject id="Jl7-z8-266" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="JBX-dC-LDh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="305"/>
+            <point key="canvasLocation" x="47" y="292"/>
         </scene>
         <!--Preferences View Controller-->
         <scene sceneID="0Jy-Jt-Cw1">
             <objects>
-                <viewController id="Cfg-FG-a50" customClass="PreferencesViewController" customModule="MenuBarTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <customObject id="i5V-Jc-NCU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController showSeguePresentationStyle="single" id="Cfg-FG-a50" customClass="PreferencesViewController" customModule="MenuBarTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sBW-Ve-C63">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="274"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yy-5L-HBm">
-                                <rect key="frame" x="18" y="140" width="364" height="16"/>
+                                <rect key="frame" x="18" y="195" width="364" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="0be-hM-3LG">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -769,7 +769,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpS-2d-64w">
-                                <rect key="frame" x="14" y="104" width="98" height="32"/>
+                                <rect key="frame" x="14" y="157" width="98" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="Choose..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfY-Wk-F7v">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -780,7 +780,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdL-1Y-oZJ">
-                                <rect key="frame" x="18" y="164" width="84" height="16"/>
+                                <rect key="frame" x="18" y="221" width="84" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Save log.csv:" id="Nf1-3p-Vbu">
                                     <font key="font" metaFont="system"/>
@@ -817,7 +817,7 @@ Gw
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ulz-z2-gIt">
-                                <rect key="frame" x="112" y="104" width="122" height="32"/>
+                                <rect key="frame" x="112" y="157" width="122" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="Set to default" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pib-tO-3J2">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -827,15 +827,30 @@ Gw
                                     <action selector="setToDefault:" target="Cfg-FG-a50" id="Pnl-nJ-4oc"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pdt-26-Fss">
+                                <rect key="frame" x="18" y="96" width="97" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Select shortcut" id="qWm-ev-NGy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tmq-QP-T5n">
+                                <rect key="frame" x="130" y="92" width="126" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="ShortcutLabel" destination="Pdt-26-Fss" id="k8x-Eh-3uO"/>
+                        <outlet property="SubViewPlaceholder" destination="Tmq-QP-T5n" id="TUE-9M-ktd"/>
                         <outlet property="pathLabel" destination="3Yy-5L-HBm" id="pnP-A3-zMi"/>
+                        <outlet property="subviewPlaceholder" destination="Tmq-QP-T5n" id="KMP-aZ-Zig"/>
                     </connections>
                 </viewController>
-                <customObject id="i5V-Jc-NCU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="299"/>
+            <point key="canvasLocation" x="699" y="284"/>
         </scene>
     </scenes>
 </document>

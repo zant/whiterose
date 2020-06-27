@@ -14,11 +14,10 @@ class MenuViewController: NSMenu {
     @IBOutlet weak var startItem: NSMenuItem!
     @IBOutlet weak var pauseItem: NSMenuItem!
     @IBOutlet weak var stopItem: NSMenuItem!
-    
     let timer = MenuTimer()
     let preferences = Preferences()
-    
-    @IBAction func onStartItem(_ sender: Any) {
+
+    func startTimer() {
         if (timer.delegate == nil) {
             timer.delegate = self
         }
@@ -27,13 +26,21 @@ class MenuViewController: NSMenu {
         RunLoop.current.add(timer.timer!, forMode: RunLoop.Mode.common)
     }
     
-    @IBAction func onPauseItem(_ sender: Any) {
+    func pauseTimer() {
         if !timer.isPaused {
             timer.pauseTimer()
         } else {
             timer.resumeTimer()
             RunLoop.current.add(timer.timer!, forMode: RunLoop.Mode.common)
         }
+    }
+    
+    @IBAction func onStartItem(_ sender: Any) {
+        startTimer()
+    }
+    
+    @IBAction func onPauseItem(_ sender: Any) {
+        pauseTimer()
     }
     
     @IBAction func onStopItem(_ sender: Any) {
@@ -64,6 +71,10 @@ class MenuViewController: NSMenu {
     
     @IBAction func onQuitTimer(_ sender: Any) {
         NSApp.terminate(sender)
+    }
+    
+    override class func setMenuBarVisible(_ visible: Bool) {
+        super.setMenuBarVisible(visible);
     }
     
     func updateButtons() {
@@ -97,4 +108,3 @@ extension MenuViewController {
         timerItem.title = textToDisplay(for: elapsedTime)
     }
 }
-
